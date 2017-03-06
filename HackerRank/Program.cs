@@ -1,179 +1,104 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using HackerRank.StartDays;
+using HackerRank.Algorithm;
+using HackerRank.Statistics;
 
 namespace HackerRank
 {
     public class Program
     {
-        //Console.WriteLine("Enter the Value of Age :");
-        static int initialAge = int.Parse(Console.ReadLine());
-        public Program(int initialAge)
+        private static void Main()
         {
-           
-            if (initialAge < 0)
-            {
-                initialAge = 0;
-                Console.WriteLine("Age is not valid, setting age to 0.");
-            }
-        }
-
-        private static void Main1(string[] args)
-        {
-            //ConditionalQuiz();
-            //ArrayQuiz();
-            //Array();
-            //ArrayCombiQuiz();
-            //SortingArray();
-            //ArrayCombiQuiz();
-            ClassQuiz();
-        }
-
-        public static void ConditionalQuiz()
-        {
-            Console.WriteLine("Enter Varible N:");
-            int n = Convert.ToInt32(Console.ReadLine());
-            Array();
-            if (n % 2 != 0)
-            {
-                Console.WriteLine("Weird");
-            }
-            else
-            {
-                if (2 <= n && n <= 5)
-                {
-                    Console.WriteLine("Not Weird");
-                }
-                if (6 <= n && n <= 20)
-                {
-                    Console.WriteLine("Weird");
-                }
-                if (20 < n)
-                {
-                    Console.WriteLine("Not Weird");
-                }
-            }
-            Console.ReadKey();
-        }
-        private static void Array()
-        {
-            Console.WriteLine("Enter the lenght of Array :");
-            //int n = int.Parse(Console.ReadLine());
-            var n = int.Parse(Console.ReadLine());
-            for (int i = 0; i <= n; i++)
-            {
-                int[] ArrayTemp = new int[n];
-                Console.WriteLine("Enter the Array :");  
-                ArrayTemp[i]=int.Parse(Console.ReadLine());
-            }
-            int[] myArray = {1, 2, 3};
-            foreach (int a in myArray)
-            {
-                Console.WriteLine(a);
-            }
-        }
-
-        static void ArrayQuiz()
-        {
-
-            int n = Convert.ToInt32(Console.ReadLine());
-            string[] arr_temp = Console.ReadLine().Split(' ');
-            int[] arr = System.Array.ConvertAll(arr_temp,Int32.Parse);
-
-            for (int i = (n - 1); i >= 0; i--)
-            {
-                Console.WriteLine("you entered {0}", arr[i]);
-            }
-            Console.ReadLine();
-        }
-
-        static public void SortingArray()
-        {
-            Console.WriteLine("Enter the number of string you want to enter :");
-            int n = int.Parse(Console.ReadLine());
-            string[] TempArray = new string[n];
-            for (int i = 0; i <= (n-1); i++)
-            {
-                Console.WriteLine("Enter your {0} String :",i);
-                TempArray[i] = Convert.ToString(Console.ReadLine());
-            }
-            for (int i = (n-1); i >= 0; i--)
-            {
-                Console.WriteLine("Your Entered strings are : {0}",TempArray[i]);
-                int m = TempArray[i].Length;
-                Console.WriteLine("Length of array is :{0}",m);
-                foreach (var a in TempArray[i])
-                {
-                    Console.Write("{0} ",a);
-                }
-            }
+            Console.WriteLine("\t\t\t\t\t*** Welcome To Hacker Rank Solutions ***" +
+                              "\n\t\t\t\t\t    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
+            ConsoleDisplay();
+            Console.WriteLine("\n\n\t\t\t\t\t\t\t\t\t\t\tMade By:" +
+                              "\n\t\t\t\t\t\t\t\t\t\t\t\tAbhishek Mandal" +
+                              "\n\t\t\t\t\t\t\t\t\t\t\t\t8446970962");
             Console.ReadKey();
         }
 
-        static public void ArrayCombiQuiz()
+        public static void ConsoleDisplay()
         {
-            Console.WriteLine("Enter a string :");
-            string arr_temp = Console.ReadLine();
-
-            for (int i = 0; i <= (arr_temp.Length - 1); i++)
+            string result = String.Empty;
+            try
             {
-                if (i%2 == 0)
+                Start:
+                int mainChoice = 0;
+                Console.WriteLine("\n\t\t\t\t\t\t    #Region-Main");
+                Console.WriteLine("\nEnter Your Choice For :" +
+                              "\n\t\t\t1.Algorithms" +
+                              "\n\t\t\t2.SQL" +
+                              "\n\t\t\t3.Start Days Code" +
+                              "\n\t\t\t4.Statistics");
+                Console.Write("\nYour Choice : ");
+                try
                 {
-                    Console.WriteLine("even {0}", arr_temp[i]);
+                    mainChoice = Int32.Parse(Console.ReadLine());
+                }
+                catch (Exception)
+                {
+                    Console.WriteLine("\nEnter a numeric value.");
+                    goto Start;
+                }
+                switch (mainChoice)
+                {
+                    case 1:
+                        {
+                            Console.WriteLine("\n\t\t\t\t\t\t#Region-Main-Algorithm");
+                            AlgorithmSwitch algorithmRank = new AlgorithmSwitch();
+                            algorithmRank.AlgorithmList();
+                            break;
+                        }
+                    case 2:
+                        {
+                            SQL.SQL.SQLList();
+                            break;
+                        }
+                    case 3:
+                        {
+                            Console.WriteLine("\n\t\t\t\t\t\t#Region-Main-Start Days");
+                            StartDaysSwitch.StartDaysList();
+                            break;
+                        }
+                    case 4:
+                        {
+                            Console.WriteLine("\n\t\t\t\t\t\t #Region-Main-Statistics");
+                            StatisticsSwitch.StatisticsList();
+                            break;
+                        }
+                    default:
+                        Console.WriteLine("\nEnter a valid choice given in list.");
+                        goto Start;
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("\nError Occurred : " + ex.Message);
+            }
+            finally
+            {
+                string input = string.Empty;
+                Last:
+                input = String.Empty;
+                Console.Write("\nDo you want to continue on Hacker Rank Solutions: ");
+                input = Convert.ToString(Console.ReadLine().ToLower());
+                if (input == "yes")
+                {
+                    ConsoleDisplay();
+                }
+                else if (input.Contains("no"))
+                {
+                Console.WriteLine("\n\n\t\t\t\t* Thanks For Using Hacker Rank Solution Application *");
+                Console.ReadKey();
                 }
                 else
                 {
-                    Console.WriteLine("odd {0}", arr_temp[i]);
+                    Console.WriteLine("\nEnter a valid input.");
+                    goto Last;
                 }
-
-            }
-            Console.ReadKey();
-        }
-
-        static void ClassQuiz()
-        {
-            
-            Program Oldie = new Program(initialAge);
-            Oldie.amIOld(initialAge);
-            Program.yearPasses(initialAge);
-            Console.ReadKey();
-        }
-        public void amIOld(int initialAge)
-        {
-            if (initialAge <= 13)
-            {
-                Console.WriteLine("You are young.");
-            }
-            int sum = initialAge + 3;
-            if (sum <= 13)
-            {
-                Console.WriteLine("You are young.");
-            }
-            else if(sum >13 && sum <18)
-            {
-                Console.WriteLine("You are teenager.");
-            }
-        }
-        public static void yearPasses(int initialAge)
-        {
-
-            if (initialAge > 18)
-            {
-                Console.WriteLine("You are old.");
-            }
-            int sum = initialAge + 3;
-            if (sum >= 13 && sum <= 18)
-            {
-                Console.WriteLine("You are teenager.");
-            }
-            else if(sum > 18)
-            {
-                Console.WriteLine("You are old.");
             }
         }
     }
 }
-
 
