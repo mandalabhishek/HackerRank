@@ -27,7 +27,9 @@ namespace HackerRank.StartDays
                                   "\n\t\t\t10.Calculator" +
                                   "\n\t\t\t11.Sorting" +
                                   "\n\t\t\t12.Prime Number" +
-                                  "\n\t\t\t13.Loops" );
+                                  "\n\t\t\t13.Loops" +
+                                  "\n\t\t\t14.Classes and Instance" +
+                                  "\n\t\t\t15.Interface");
                 Console.Write("\nYour Choice : ");
                 int input = Convert.ToInt32(Console.ReadLine());
                 switch (input)
@@ -110,6 +112,16 @@ namespace HackerRank.StartDays
                     case 13:
                         {
                             StartDaysCode.Loops();
+                            break;
+                        }
+                    case 14:
+                        {
+                            ClassInstance.Instance();
+                            break;
+                        }
+                    case 15:
+                        {
+                            Interface.InterfaceQuiz();
                             break;
                         }
                     default:
