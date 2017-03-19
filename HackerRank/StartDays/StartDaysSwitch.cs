@@ -29,7 +29,9 @@ namespace HackerRank.StartDays
                                   "\n\t\t\t12.Prime Number" +
                                   "\n\t\t\t13.Loops" +
                                   "\n\t\t\t14.Classes and Instance" +
-                                  "\n\t\t\t15.Interface");
+                                  "\n\t\t\t15.Interface" +
+                                  "\n\t\t\t16.Nested Logic " +
+                                  "\n\t\t\t17.String Patterns");
                 Console.Write("\nYour Choice : ");
                 int input = Convert.ToInt32(Console.ReadLine());
                 switch (input)
@@ -124,6 +126,16 @@ namespace HackerRank.StartDays
                             Interface.InterfaceQuiz();
                             break;
                         }
+                    case 16:
+                        {
+                            StartDaysCode.NestedLogic();
+                            break;
+                        }
+                    case 17:
+                        {
+                            StartDaysCode.StringPatterns();
+                            break;
+                        }
                     default:
                         Console.WriteLine("Enter a valid choice given in list.");
                         goto Decide;
@@ -138,7 +150,7 @@ namespace HackerRank.StartDays
                 string input = string.Empty;
                 Last:
                 input = String.Empty;
-                Console.Write("\nDo you want to continue on Algorithms start days : ");
+                Console.Write("\nDo you want to continue on Start days code : ");
                 input = Convert.ToString(Console.ReadLine().ToLower());
                 if (input == "yes")
                 {

@@ -264,6 +264,62 @@ namespace HackerRank.StartDays
             }
             Console.ReadKey();
         }
+        public static void NestedLogic()
+        {
+            int bill = 0;
+            Console.WriteLine("Welcome to Library System");
+            Console.Write("Enter the actual date (saparated by space): ");
+            string[] actual = Console.ReadLine().Split(' ');
+            Console.Write("Enter the expected date (saparated by space): ");
+            string[] expected = Console.ReadLine().Split(' ');
+            if (actual == expected)
+            {
+                bill = 0;
+            }
+            else if (Convert.ToInt32(actual[2]) < Convert.ToInt32(expected[2]))
+            {
+                bill = 0;
+            }
+            else if (Convert.ToInt32(actual[2]) > Convert.ToInt32(expected[2]))
+            {
+                bill = 10000;
+            }
+            else if (Convert.ToInt32(actual[1]) > Convert.ToInt32(expected[1]))
+            {
+                bill = (Convert.ToInt32(actual[1]) - Convert.ToInt32(expected[1])) * 500;
+            }
+            else if (Convert.ToInt32(actual[0]) > Convert.ToInt32(expected[0]))
+            {
+                bill = (Convert.ToInt32(actual[0]) - Convert.ToInt32(expected[0])) * 15;
+            }
+            Console.WriteLine("Final bill of library is :" + bill);
+        }
+        public static void StringPatterns()
+        {
+            Console.Write("Enter the no. of test cases :");
+            int N = Convert.ToInt32(Console.ReadLine());
+            string[] tokens_firstName = new string[N];
+            string[] final = new string[N];
+            for (int a0 = 0; a0 < N; a0++)
+            {
+                Console.Write("Enter the {0} test cases :", a0 + 1);
+                Console.WriteLine("Enter the first name and than email Id saparated by space.");
+                tokens_firstName[a0] = Console.ReadLine();
+            }
+            for (int i = 0; i < N; i++)
+            {
+                if (tokens_firstName[i].ToString().Contains("@gmail.com"))
+                {
+                    final[i] = tokens_firstName[i].Substring(0, tokens_firstName[i].IndexOf(' '));
+                }
+            }
+            Array.Sort(final);
+            for (int i = 0; i < N; i++)
+            {
+                if (final[i] != null)
+                    Console.WriteLine("First name of {0} id is : {1}",i+1,final[i]);
+            }
+        }
     }
 }
 
