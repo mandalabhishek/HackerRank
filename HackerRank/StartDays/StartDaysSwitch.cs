@@ -31,7 +31,8 @@ namespace HackerRank.StartDays
                                   "\n\t\t\t14.Classes and Instance" +
                                   "\n\t\t\t15.Interface" +
                                   "\n\t\t\t16.Nested Logic " +
-                                  "\n\t\t\t17.String Patterns");
+                                  "\n\t\t\t17.String Patterns" +
+                                  "\n\t\t\t18.Abstract Class");
                 Console.Write("\nYour Choice : ");
                 int input = Convert.ToInt32(Console.ReadLine());
                 switch (input)
@@ -134,6 +135,11 @@ namespace HackerRank.StartDays
                     case 17:
                         {
                             StartDaysCode.StringPatterns();
+                            break;
+                        }
+                    case 18:
+                        {
+                            Abstract.Start();
                             break;
                         }
                     default:

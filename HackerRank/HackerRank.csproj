@@ -81,6 +81,7 @@
     <Compile Include="Algorithm\Switch\AlgorithmSwitch.cs" />
     <Compile Include="Algorithm\AlgorithmWarmUp.cs" />
     <Compile Include="Algorithm\Switch\AlgorithmWarmUpSwitch.cs" />
+    <Compile Include="StartDays\Abstraction.cs" />
     <Compile Include="StartDays\ClassInstance.cs" />
     <Compile Include="StartDays\Inheritance.cs" />
     <Compile Include="Program.cs" />
