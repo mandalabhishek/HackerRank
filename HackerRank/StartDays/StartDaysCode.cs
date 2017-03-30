@@ -14,12 +14,12 @@ namespace HackerRank.StartDays
         {
             Console.Write("\nEnter your name :");
             String inputString = Console.ReadLine();
-            Console.Write("Input String is : Hello "+inputString);
+            Console.Write("Input String is : Hello " + inputString);
             Console.ReadKey();
         }
         public static void Operator()
         {
-            Console .Write("\nEnter MealCost:");
+            Console.Write("\nEnter MealCost:");
             double mealCost = Convert.ToDouble(Console.ReadLine());
             Console.Write("Enter TipPercent:");
             double tipPercent = Convert.ToDouble(Console.ReadLine());
@@ -36,17 +36,22 @@ namespace HackerRank.StartDays
         {
             Console.Write("\nEnter Varible N:");
             int n = Convert.ToInt32(Console.ReadLine());
-            if (n % 2 != 0){
+            if (n % 2 != 0)
+            {
                 Console.WriteLine("Weird");
             }
-            else{
-                if (2 <= n && n <= 5){
+            else
+            {
+                if (2 <= n && n <= 5)
+                {
                     Console.WriteLine("Not Weird");
                 }
-                if (6 <= n && n <= 20){
+                if (6 <= n && n <= 20)
+                {
                     Console.WriteLine("Weird");
                 }
-                if (20 < n){
+                if (20 < n)
+                {
                     Console.WriteLine("Not Weird");
                 }
             }
@@ -163,15 +168,17 @@ namespace HackerRank.StartDays
             }
             Console.WriteLine("Number of Consective 1's are : {0}", temp);
             Console.ReadKey();
-        } 
+        }
         public static void Parsing()
         {
             Console.Write("\nEnter the String (String/Integer):");
-            try{
+            try
+            {
                 int dummy = int.Parse(Console.ReadLine());
                 Console.WriteLine(dummy);
             }
-            catch (Exception){
+            catch (Exception)
+            {
                 Console.WriteLine("Bad String");
             }
         }
@@ -188,7 +195,7 @@ namespace HackerRank.StartDays
                         s *= a;
                         i++;
                     } while (i < b);
-                    Console.WriteLine("Output is : {0}",s);
+                    Console.WriteLine("Output is : {0}", s);
                     Console.ReadKey();
                 }
                 else
@@ -226,7 +233,7 @@ namespace HackerRank.StartDays
             Console.WriteLine("First Element: " + arr[0]);
             Console.WriteLine("Last Element: " + arr[n - 1]);
             Console.WriteLine("Sorted Array :");
-            for (int i = 0; i < arr.Length; i++) Console.Write(+ arr[i] + " ");
+            for (int i = 0; i < arr.Length; i++) Console.Write(+arr[i] + " ");
             Console.ReadKey();
         }
         public static void Prime()
@@ -317,8 +324,30 @@ namespace HackerRank.StartDays
             for (int i = 0; i < N; i++)
             {
                 if (final[i] != null)
-                    Console.WriteLine("First name of {0} id is : {1}",i+1,final[i]);
+                    Console.WriteLine("First name of {0} id is : {1}", i + 1, final[i]);
             }
+        }
+    }
+    public class Scope
+    {
+        public static int maximumDifference;
+        public static int n = 0;
+        public static int computeDifference(int[] elements)
+        {
+            Array.Sort(elements);
+            n = elements.Length;
+            maximumDifference = elements[n - 1] - elements[0];
+            return maximumDifference;
+        }
+        public static void Diff()
+        {
+            Console.WriteLine("Enter length of integer array: ");
+            Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("Enter a array of Interger (saparated by space): ");
+            int[] a = Console.ReadLine().Split(' ').Select(x => Convert.ToInt32(x)).ToArray();
+            int final = 0;
+            final = computeDifference(a);
+            Console.Write("Result is :" + final);
         }
     }
 }
