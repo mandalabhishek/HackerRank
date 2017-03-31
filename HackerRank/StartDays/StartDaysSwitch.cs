@@ -33,7 +33,8 @@ namespace HackerRank.StartDays
                                   "\n\t\t\t16.Nested Logic " +
                                   "\n\t\t\t17.String Patterns" +
                                   "\n\t\t\t18.Abstract Class" +
-                                  "\n\t\t\t19.Scope");
+                                  "\n\t\t\t19.Scope" +
+                                  "\n\t\t\t20.Dictionary");
                 Console.Write("\nYour Choice : ");
                 int input = Convert.ToInt32(Console.ReadLine());
                 switch (input)
@@ -146,6 +147,11 @@ namespace HackerRank.StartDays
                     case 19:
                         {
                             Scope.Diff();
+                            break;
+                        }
+                    case 20:
+                        {
+                            StartDaysCode.Dictionary();
                             break;
                         }
                     default:

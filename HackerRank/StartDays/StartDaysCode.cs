@@ -327,6 +327,25 @@ namespace HackerRank.StartDays
                     Console.WriteLine("First name of {0} id is : {1}", i + 1, final[i]);
             }
         }
+        public static void Dictionary()
+        {
+            string name = string.Empty;
+            Console.Write("Enter the number of inputs :");
+            int n = Convert.ToInt32(Console.ReadLine());
+            Dictionary<string, string> dict = new Dictionary<string, string>();
+            for (int i = 0; i < n; i++)
+            {
+                Console.WriteLine("Enter Number and Name (saparated by space):");
+                string[] dummy = Console.ReadLine().Split(' ');
+                dict.Add(dummy[0], dummy[1]);
+            }
+            for (int i = 0; i < n; i++)
+            {
+                Console.Write("Enter name to search :");
+                name = Console.ReadLine();
+                Console.WriteLine(dict.ContainsKey(name) ? name + "=" + dict[name] : "Not Found");
+            }
+        }
     }
     public class Scope
     {
